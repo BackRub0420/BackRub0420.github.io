@@ -91,7 +91,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"backrub0420.top","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"backrub0420.top","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -101,6 +101,21 @@
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
   
@@ -318,13 +333,13 @@
             
               <div class="markdown-body">
                 
-                <h2 id="一-ADC库函数"><a href="#一-ADC库函数" class="headerlink" title="一. ADC库函数"></a>一. ADC库函数</h2><p><img data-src="./STM32-ADC/STM32_ADC_fun.png" srcset="/img/loading.gif" lazyload><br>具体如下:<br><img data-src="./STM32-ADC/ADC_Init.png" srcset="/img/loading.gif" lazyload><br><img data-src="./STM32-ADC/adc_cmd.png" srcset="/img/loading.gif" lazyload><br><img data-src="./STM32-ADC/adc_software_cmd.png" srcset="/img/loading.gif" lazyload><br>具体步骤:<br><img data-src="./STM32-ADC/shiyanbuzhou.png" srcset="/img/loading.gif" lazyload></p>
+                <h2 id="一-ADC库函数"><a href="#一-ADC库函数" class="headerlink" title="一. ADC库函数"></a>一. ADC库函数</h2><p><img data-src="./STM32-ADC/STM32_ADC_fun.png"><br>具体如下:<br><img data-src="./STM32-ADC/ADC_Init.png"><br><img data-src="./STM32-ADC/adc_cmd.png"><br><img data-src="./STM32-ADC/adc_software_cmd.png"><br>具体步骤:<br><img data-src="./STM32-ADC/shiyanbuzhou.png"></p>
 <p>ADC的工作模式如下:<br>ADC_MODE<br>库函数版:<br>ADC_Mode_Independent   为独立工作模式<br>ADC_Mode_RegInjecSimult  为</p>
 <p>ADC寄存器总结.</p>
-<h3 id="1-ADC-规则序列寄存器-3个"><a href="#1-ADC-规则序列寄存器-3个" class="headerlink" title="1. ADC 规则序列寄存器( 3个 )"></a>1. ADC 规则序列寄存器( 3个 )</h3><p>包括ADC_SQR1     ADC_SQR2    ADC_SQR3三个寄存器,<br>规则通道最多只能安排16个通道转换顺序,具体由下列寄存器决定,如下图:<br><img data-src="./STM32-ADC/adc_sqr1.png" srcset="/img/loading.gif" lazyload><br><img data-src="./STM32-ADC/adc_sqr2.png" srcset="/img/loading.gif" lazyload><br><img data-src="./STM32-ADC/adc_sqr3.png" srcset="/img/loading.gif" lazyload><br>由上图可知:<br>该寄存器的作用时确定通道的转换优先级,即确定通道的转换顺序.</p>
+<h3 id="1-ADC-规则序列寄存器-3个"><a href="#1-ADC-规则序列寄存器-3个" class="headerlink" title="1. ADC 规则序列寄存器( 3个 )"></a>1. ADC 规则序列寄存器( 3个 )</h3><p>包括ADC_SQR1     ADC_SQR2    ADC_SQR3三个寄存器,<br>规则通道最多只能安排16个通道转换顺序,具体由下列寄存器决定,如下图:<br><img data-src="./STM32-ADC/adc_sqr1.png"><br><img data-src="./STM32-ADC/adc_sqr2.png"><br><img data-src="./STM32-ADC/adc_sqr3.png"><br>由上图可知:<br>该寄存器的作用时确定通道的转换优先级,即确定通道的转换顺序.</p>
 <p>其中每5个位表示一个转换顺序,顺序由 ADC_SQR3  —ADC_SQR1  依次递增</p>
 <p>其中每一个转换顺序的值时填入一个通道序号.( 该序号指0 — 17   包括16个外部通道模拟输入以及内部温度模拟输入和Vref( 参考电压) 输入 通道)</p>
-<h3 id="2-ADC-注入序列寄存器"><a href="#2-ADC-注入序列寄存器" class="headerlink" title="2. ADC 注入序列寄存器"></a>2. ADC 注入序列寄存器</h3><p><img data-src="./STM32-ADC/adc_jsqr.png" srcset="/img/loading.gif" lazyload><br>该寄存器与上面的规则寄存器类似,也是每5个bit位代表一个通道,注入通道一共有4个.</p>
+<h3 id="2-ADC-注入序列寄存器"><a href="#2-ADC-注入序列寄存器" class="headerlink" title="2. ADC 注入序列寄存器"></a>2. ADC 注入序列寄存器</h3><p><img data-src="./STM32-ADC/adc_jsqr.png"><br>该寄存器与上面的规则寄存器类似,也是每5个bit位代表一个通道,注入通道一共有4个.</p>
 
                 
               </div>
@@ -423,12 +438,6 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
-                    
-                      <a href="/undefined.html" title="Hello World">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
                     
                   </article>
                   <article class="post-next col-6">
@@ -538,7 +547,8 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+      
+<div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
     </div>
   
   
@@ -587,7 +597,9 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
   
 
 
