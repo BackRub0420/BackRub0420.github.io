@@ -253,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.8k 字
+          4.2k 字
         
       </span>
     
@@ -264,7 +264,7 @@
         
         
         
-          32 分钟
+          36 分钟
         
       </span>
     
@@ -315,7 +315,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2 天前
+                    本文最后更新于：3 天前
                   
                 
               </p>
@@ -325,118 +325,118 @@
                 
                 <h1 id="第一部分-QJsonObject"><a href="#第一部分-QJsonObject" class="headerlink" title="第一部分 QJsonObject"></a>第一部分 QJsonObject</h1><hr>
 <p>说明：封装了JSON中的对象，可以存储多个 键值对 其中，键为字符串  类型，值为  QJsonValue  类型</p>
-<h2 id="1-创建一个QJsonobject对象"><a href="#1-创建一个QJsonobject对象" class="headerlink" title="(1).  创建一个QJsonobject对象"></a>(1).  创建一个QJsonobject对象</h2><pre><code class="QT">QJsonObject::QJsonObject( );
-</code></pre>
-<h2 id="2-将键值对添加到QJsonObject对象中"><a href="#2-将键值对添加到QJsonObject对象中" class="headerlink" title="(2). 将键值对添加到QJsonObject对象中"></a>(2). 将键值对添加到QJsonObject对象中</h2><pre><code class="QT">QJsonObject::iteratou insert( const QString &amp;key, const QJsonValue &amp;value);
-</code></pre>
-<h2 id="3-获取QJSONObject对象中-键值对的个数"><a href="#3-获取QJSONObject对象中-键值对的个数" class="headerlink" title="(3).  获取QJSONObject对象中 键值对的个数"></a>(3).  获取QJSONObject对象中 键值对的个数</h2><pre><code class="QT">int  QJsonObject::cout( ) const;
+<h2 id="1-创建一个QJsonobject对象"><a href="#1-创建一个QJsonobject对象" class="headerlink" title="(1).  创建一个QJsonobject对象"></a>(1).  创建一个QJsonobject对象</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">QJsonObject::QJsonObject( );</code></pre></div></figure>
+
+<h2 id="2-将键值对添加到QJsonObject对象中"><a href="#2-将键值对添加到QJsonObject对象中" class="headerlink" title="(2). 将键值对添加到QJsonObject对象中"></a>(2). 将键值对添加到QJsonObject对象中</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">QJsonObject::iteratou insert( const QString &amp;key, const QJsonValue &amp;value);</code></pre></div></figure>
+
+<h2 id="3-获取QJSONObject对象中-键值对的个数"><a href="#3-获取QJSONObject对象中-键值对的个数" class="headerlink" title="(3).  获取QJSONObject对象中 键值对的个数"></a>(3).  获取QJSONObject对象中 键值对的个数</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">int  QJsonObject::cout( ) const;
 int  QJsonObject::size( ) const;
-int  QJsonObject::length( ) const;
-</code></pre>
-<h2 id="4-通过key得到value"><a href="#4-通过key得到value" class="headerlink" title="(4).  通过key得到value"></a>(4).  通过key得到value</h2><pre><code class="QT">QJsonValue QJsonOject::value( const QString &amp;key ) const;
-QJsonValue QJsonOject::operator[ ]( const QString &amp;key ) const;
-</code></pre>
-<h2 id="5-检查key是否存在"><a href="#5-检查key是否存在" class="headerlink" title="(5).  检查key是否存在"></a>(5).  检查key是否存在</h2><pre><code class="QT">iterator QJsonObject::find (const QString &amp;key);
-bool QJsonObject::contains(const QString &amp;key);
-</code></pre>
-<h2 id="6-遍历key"><a href="#6-遍历key" class="headerlink" title="(6).  遍历key"></a>(6).  遍历key</h2><pre><code class="QT">QStingList QJsonObject::keys ( ) const;
-</code></pre>
+int  QJsonObject::length( ) const;</code></pre></div></figure>
+
+<h2 id="4-通过key得到value"><a href="#4-通过key得到value" class="headerlink" title="(4).  通过key得到value"></a>(4).  通过key得到value</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">QJsonValue QJsonOject::value( const QString &amp;key ) const;
+QJsonValue QJsonOject::operator[ ]( const QString &amp;key ) const;</code></pre></div></figure>
+
+<h2 id="5-检查key是否存在"><a href="#5-检查key是否存在" class="headerlink" title="(5).  检查key是否存在"></a>(5).  检查key是否存在</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">iterator QJsonObject::find (const QString &amp;key);
+bool QJsonObject::contains(const QString &amp;key);</code></pre></div></figure>
+
+<h2 id="6-遍历key"><a href="#6-遍历key" class="headerlink" title="(6).  遍历key"></a>(6).  遍历key</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">QStingList QJsonObject::keys ( ) const;</code></pre></div></figure>
+
 <h1 id="第二部分-QJsonArray"><a href="#第二部分-QJsonArray" class="headerlink" title="第二部分 QJsonArray"></a>第二部分 QJsonArray</h1><hr>
 <p>说明：封装了json中的数组  数组中元素为QJsonValue类型</p>
-<h2 id="1-创建一个QJsonArray"><a href="#1-创建一个QJsonArray" class="headerlink" title="(1).  创建一个QJsonArray"></a>(1).  创建一个QJsonArray</h2><pre><code class="QT">QJsonObject::QJsonArray( );
-</code></pre>
-<h2 id="2-添加数组元素"><a href="#2-添加数组元素" class="headerlink" title="(2). 添加数组元素"></a>(2). 添加数组元素</h2><pre><code class="QT">void QJsonArray::append(const   QJsonValue &amp;value )；//添加到头部
-void QJsonArray::prepend(const  QJsonValue &amp;value )；//添加到尾部
-void QJsonArray::instert ( int i, const QJsonValue &amp;value);//插入到 i 的位置之前
-void QJsonArray::push_back ( const QJsonValue &amp;value);//添加到头部
-void QJsonArray::push_front ( const QJsonValue &amp;value);//添加到尾部
-</code></pre>
-<h2 id="3-获取QJsonArray中元素的个数"><a href="#3-获取QJsonArray中元素的个数" class="headerlink" title="(3). 获取QJsonArray中元素的个数"></a>(3). 获取QJsonArray中元素的个数</h2><pre><code class="QT">int QJsonArray::count( ) const;
-int QJsonArray::size( ) const;
-</code></pre>
-<h2 id="4-获取元素的值"><a href="#4-获取元素的值" class="headerlink" title="(4). 获取元素的值"></a>(4). 获取元素的值</h2><pre><code class="QT">QJsonValue QJsonArray::first( ) const;//获得头部
-QJsonValue QJsonArray::last( ) const; //获得尾部
-//获得指定位置的值
+<h2 id="1-创建一个QJsonArray"><a href="#1-创建一个QJsonArray" class="headerlink" title="(1).  创建一个QJsonArray"></a>(1).  创建一个QJsonArray</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">QJsonObject::QJsonArray( );</code></pre></div></figure>
+
+<h2 id="2-添加数组元素"><a href="#2-添加数组元素" class="headerlink" title="(2). 添加数组元素"></a>(2). 添加数组元素</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">void QJsonArray::append(const   QJsonValue &amp;value )；&#x2F;&#x2F;添加到头部
+void QJsonArray::prepend(const  QJsonValue &amp;value )；&#x2F;&#x2F;添加到尾部
+void QJsonArray::instert ( int i, const QJsonValue &amp;value);&#x2F;&#x2F;插入到 i 的位置之前
+void QJsonArray::push_back ( const QJsonValue &amp;value);&#x2F;&#x2F;添加到头部
+void QJsonArray::push_front ( const QJsonValue &amp;value);&#x2F;&#x2F;添加到尾部</code></pre></div></figure>
+
+<h2 id="3-获取QJsonArray中元素的个数"><a href="#3-获取QJsonArray中元素的个数" class="headerlink" title="(3). 获取QJsonArray中元素的个数"></a>(3). 获取QJsonArray中元素的个数</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">int QJsonArray::count( ) const;
+int QJsonArray::size( ) const;</code></pre></div></figure>
+
+<h2 id="4-获取元素的值"><a href="#4-获取元素的值" class="headerlink" title="(4). 获取元素的值"></a>(4). 获取元素的值</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">QJsonValue QJsonArray::first( ) const;&#x2F;&#x2F;获得头部
+QJsonValue QJsonArray::last( ) const; &#x2F;&#x2F;获得尾部
+&#x2F;&#x2F;获得指定位置的值
 QJsonValue QJsonArray::at( int i ) const;
-QJsonValue QJsonArray::operator[ ]( int i ) const;
-</code></pre>
-<h2 id="5-删除元素"><a href="#5-删除元素" class="headerlink" title="(5). 删除元素"></a>(5). 删除元素</h2><pre><code class="QT">void QJsonArray::pop_back( )；      //删除头部
-void QJsonArray::pop_front()；      //删除尾部
-void QJsonArray::removeFirst( )；   //删除头部
-void QJsonArray::removeLast()；     //删除尾部
-//删除指定位置
+QJsonValue QJsonArray::operator[ ]( int i ) const;</code></pre></div></figure>
+
+<h2 id="5-删除元素"><a href="#5-删除元素" class="headerlink" title="(5). 删除元素"></a>(5). 删除元素</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">void QJsonArray::pop_back( )；      &#x2F;&#x2F;删除头部
+void QJsonArray::pop_front()；      &#x2F;&#x2F;删除尾部
+void QJsonArray::removeFirst( )；   &#x2F;&#x2F;删除头部
+void QJsonArray::removeLast()；     &#x2F;&#x2F;删除尾部
+&#x2F;&#x2F;删除指定位置
 void QJsonArray::removeAt ( int i );
-void QJsonArray::takeAt( int i );
-</code></pre>
-<h1 id="第三部分-QJsonValue"><a href="#第三部分-QJsonValue" class="headerlink" title="第三部分 QJsonValue"></a>第三部分 QJsonValue</h1><h2 id="1-封装json支持6种数据类型"><a href="#1-封装json支持6种数据类型" class="headerlink" title="(1). 封装json支持6种数据类型"></a>(1). 封装json支持6种数据类型</h2><pre><code class="QT">QJsonValue::Bool          //布尔类型
-QJsonValue::Double        //浮点类型（包括整形）
-QJsonValue::String        //字符串类型
-QJsonValue::Array        //json数组类型
-QJsonValue::Object        //json对象类型
-QJsonValue::Null        //空值类型
-</code></pre>
-<h2 id="2-构造QJsonValue对象"><a href="#2-构造QJsonValue对象" class="headerlink" title="(2).  构造QJsonValue对象"></a>(2).  构造QJsonValue对象</h2><pre><code class="QT">//字符串
+void QJsonArray::takeAt( int i );</code></pre></div></figure>
+
+<h1 id="第三部分-QJsonValue"><a href="#第三部分-QJsonValue" class="headerlink" title="第三部分 QJsonValue"></a>第三部分 QJsonValue</h1><h2 id="1-封装json支持6种数据类型"><a href="#1-封装json支持6种数据类型" class="headerlink" title="(1). 封装json支持6种数据类型"></a>(1). 封装json支持6种数据类型</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">QJsonValue::Bool          &#x2F;&#x2F;布尔类型
+QJsonValue::Double        &#x2F;&#x2F;浮点类型（包括整形）
+QJsonValue::String        &#x2F;&#x2F;字符串类型
+QJsonValue::Array        &#x2F;&#x2F;json数组类型
+QJsonValue::Object        &#x2F;&#x2F;json对象类型
+QJsonValue::Null        &#x2F;&#x2F;空值类型</code></pre></div></figure>
+
+<h2 id="2-构造QJsonValue对象"><a href="#2-构造QJsonValue对象" class="headerlink" title="(2).  构造QJsonValue对象"></a>(2).  构造QJsonValue对象</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">&#x2F;&#x2F;字符串
 QJsonValue ( const char *s );
 QJsonValue ( QLatinlString s );
 QJsonValue ( const QString &amp;s  );
-//整形 and 浮点形
+&#x2F;&#x2F;整形 and 浮点形
 QJsonValue ( qint64 v );
 QJsonValue ( int v );
 QJsonValue ( double v );
-//布尔类型
+&#x2F;&#x2F;布尔类型
 QJsonValue (bool b );
-//json数组类型
+&#x2F;&#x2F;json数组类型
 QJsonValue（ const QJsonObject &amp;o );
-//json对象类型
+&#x2F;&#x2F;json对象类型
 QJsonValue（const QJsonArray &amp;a );
-//空值类型
-QJsonValue（ QJsonValue::Type type = NULL );
-</code></pre>
-<h2 id="3-判断一个-QJsonValue对象-的数据类型"><a href="#3-判断一个-QJsonValue对象-的数据类型" class="headerlink" title="(3). 判断一个 QJsonValue对象 的数据类型"></a>(3). 判断一个 QJsonValue对象 的数据类型</h2><pre><code class="QT">bool isString:( ) const;//是否是字符串类型
-bool isDouble:( ) const;//是否是浮点类型
-bool isBool:( ) const;//是否布尔类型
-bool isObject:( ) const;//是否是json对象类型
-bool isArray:( ) const;//是否json数组类型
-bool isUndefined:( ) const;//是否是未定义类型（ 无法识别的类型 ）类型
-bool isUNull:( ) const;//是否是空值类型
-</code></pre>
-<h2 id="4-转换一个-QJsonValue对象-的数据类型"><a href="#4-转换一个-QJsonValue对象-的数据类型" class="headerlink" title="(4).转换一个 QJsonValue对象 的数据类型"></a>(4).转换一个 QJsonValue对象 的数据类型</h2><pre><code class="QT">//转换为字符串类型
+&#x2F;&#x2F;空值类型
+QJsonValue（ QJsonValue::Type type &#x3D; NULL );</code></pre></div></figure>
+
+<h2 id="3-判断一个-QJsonValue对象-的数据类型"><a href="#3-判断一个-QJsonValue对象-的数据类型" class="headerlink" title="(3). 判断一个 QJsonValue对象 的数据类型"></a>(3). 判断一个 QJsonValue对象 的数据类型</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">bool isString:( ) const;&#x2F;&#x2F;是否是字符串类型
+bool isDouble:( ) const;&#x2F;&#x2F;是否是浮点类型
+bool isBool:( ) const;&#x2F;&#x2F;是否布尔类型
+bool isObject:( ) const;&#x2F;&#x2F;是否是json对象类型
+bool isArray:( ) const;&#x2F;&#x2F;是否json数组类型
+bool isUndefined:( ) const;&#x2F;&#x2F;是否是未定义类型（ 无法识别的类型 ）类型
+bool isUNull:( ) const;&#x2F;&#x2F;是否是空值类型</code></pre></div></figure>
+
+<h2 id="4-转换一个-QJsonValue对象-的数据类型"><a href="#4-转换一个-QJsonValue对象-的数据类型" class="headerlink" title="(4).转换一个 QJsonValue对象 的数据类型"></a>(4).转换一个 QJsonValue对象 的数据类型</h2><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">&#x2F;&#x2F;转换为字符串类型
 QString toString( ) const;
 QString toString( const QString &amp;defaultvalue ) const;
-//转换为浮点类型
-double toDouble( double defaultvalue = 0) const;
-//转换为整形
-int toInt（ int defaultvalue = 0 ）const；
-//转换为布尔类型
-bool toBool(bool defaultvalue = false) const;
-//是否是json对象
-QJsonObject toObject( bool defaultvalue =  false ) const;
+&#x2F;&#x2F;转换为浮点类型
+double toDouble( double defaultvalue &#x3D; 0) const;
+&#x2F;&#x2F;转换为整形
+int toInt（ int defaultvalue &#x3D; 0 ）const；
+&#x2F;&#x2F;转换为布尔类型
+bool toBool(bool defaultvalue &#x3D; false) const;
+&#x2F;&#x2F;是否是json对象
+QJsonObject toObject( bool defaultvalue &#x3D;  false ) const;
 QJsonObject toObject( ) const;
-//转换为json数组
-QJsonObject toObject( bool defaultvalue =  false ) const;
-QJsonObject toObject( ) const;
-</code></pre>
+&#x2F;&#x2F;转换为json数组
+QJsonObject toObject( bool defaultvalue &#x3D;  false ) const;
+QJsonObject toObject( ) const;</code></pre></div></figure>
+
 <h1 id="第四部分-QJsonDocument"><a href="#第四部分-QJsonDocument" class="headerlink" title="第四部分 QJsonDocument"></a>第四部分 QJsonDocument</h1><p>说明：封装了一个完整的JSON文档</p>
 <p>以二进制的方式读取或写入文档  以utf-8形式表示</p>
 <p>QJsonObject和QjsonArray不能直接转换为字符串类型 需要通过QJsonDocuemt类来进行转换</p>
-<h2 id="1-QJsonObject-QjsonArray-gt-字符串"><a href="#1-QJsonObject-QjsonArray-gt-字符串" class="headerlink" title="(1). QJsonObject / QjsonArray =&gt; 字符串"></a>(1). QJsonObject / QjsonArray =&gt; 字符串</h2><h3 id="a-创建QJsonDoucument-对象-以QJsonObject-或-QJsonArray为参数创建QJsonDoucunt-对象"><a href="#a-创建QJsonDoucument-对象-以QJsonObject-或-QJsonArray为参数创建QJsonDoucunt-对象" class="headerlink" title="a. 创建QJsonDoucument 对象  以QJsonObject 或 QJsonArray为参数创建QJsonDoucunt 对象"></a>a. 创建QJsonDoucument 对象  以QJsonObject 或 QJsonArray为参数创建QJsonDoucunt 对象</h3><pre><code class="QT">QJsonDocument::QJsonDoucument( const QJsonObject &amp;object);      //第二个为定义的对象名字QJsonDoucument
-QJsonDocument::QJsonDoucument( const QJsonArray &amp;object);       //第二个为定义的对象名字QJsonDoucument
-</code></pre>
+<h2 id="1-QJsonObject-QjsonArray-gt-字符串"><a href="#1-QJsonObject-QjsonArray-gt-字符串" class="headerlink" title="(1). QJsonObject / QjsonArray =&gt; 字符串"></a>(1). QJsonObject / QjsonArray =&gt; 字符串</h2><h3 id="a-创建QJsonDoucument-对象-以QJsonObject-或-QJsonArray为参数创建QJsonDoucunt-对象"><a href="#a-创建QJsonDoucument-对象-以QJsonObject-或-QJsonArray为参数创建QJsonDoucunt-对象" class="headerlink" title="a. 创建QJsonDoucument 对象  以QJsonObject 或 QJsonArray为参数创建QJsonDoucunt 对象"></a>a. 创建QJsonDoucument 对象  以QJsonObject 或 QJsonArray为参数创建QJsonDoucunt 对象</h3><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">QJsonDocument::QJsonDoucument( const QJsonObject &amp;object);      &#x2F;&#x2F;第二个为定义的对象名字QJsonDoucument
+QJsonDocument::QJsonDoucument( const QJsonArray &amp;object);       &#x2F;&#x2F;第二个为定义的对象名字QJsonDoucument</code></pre></div></figure>
+
 <h3 id="b-将QJsonDoucument对象中的数据进行序列化"><a href="#b-将QJsonDoucument对象中的数据进行序列化" class="headerlink" title="b . 将QJsonDoucument对象中的数据进行序列化"></a>b . 将QJsonDoucument对象中的数据进行序列化</h3><p> 通过调用toxxx（）方法可以得到文本格式或者二进制格式的JSon字符串</p>
-<pre><code class="QT">QByteArray QJsonDocument::toBinaryData( ) const;
-QByteArray QJsonDocument::toJson( ) const;
-</code></pre>
-<h3 id="c-使用得到的字符串进行数据传输，或者保存到文件"><a href="#c-使用得到的字符串进行数据传输，或者保存到文件" class="headerlink" title="c. 使用得到的字符串进行数据传输，或者保存到文件"></a>c. 使用得到的字符串进行数据传输，或者保存到文件</h3><h2 id="2-字符串-gt-QJsonObject-QjsonArray"><a href="#2-字符串-gt-QJsonObject-QjsonArray" class="headerlink" title="(2).字符串 =&gt; QJsonObject / QjsonArray"></a>(2).字符串 =&gt; QJsonObject / QjsonArray</h2><h3 id="a-将-JSON字符串转换为-QJsonDoucument-对象"><a href="#a-将-JSON字符串转换为-QJsonDoucument-对象" class="headerlink" title="a. 将 JSON字符串转换为 QJsonDoucument 对象"></a>a. 将 JSON字符串转换为 QJsonDoucument 对象</h3><pre><code class="QT">[static] QJsonDocument  QJsonDoucument::fromBinaryData( const QJsonArray &amp;data, Datavalidation validation = validation);
-[static] QJsonDocument  QJsonDoucument::fromjson( const QJsonArray &amp;json,QJsonParseError * error = Q_NULLPTR);
-</code></pre>
-<h3 id="3-将QJsonDoucument对象-转换为json数组-对象"><a href="#3-将QJsonDoucument对象-转换为json数组-对象" class="headerlink" title="(3). 将QJsonDoucument对象 转换为json数组 /对象"></a>(3). 将QJsonDoucument对象 转换为json数组 /对象</h3><h4 id="a-判断文档对象中存储的数据，是JSON-数组还是JSON-对象"><a href="#a-判断文档对象中存储的数据，是JSON-数组还是JSON-对象" class="headerlink" title="a. 判断文档对象中存储的数据，是JSON 数组还是JSON 对象"></a>a. 判断文档对象中存储的数据，是JSON 数组还是JSON 对象</h4><pre><code class="QT">bool QJsonDocument::isArray:() const;
+<figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">QByteArray QJsonDocument::toBinaryData( ) const;
+QByteArray QJsonDocument::toJson( ) const;</code></pre></div></figure>
 
-bool QJsonDocument::isObject() const;
-</code></pre>
-<h4 id="b-之后就可以转换为数组或JSON对象"><a href="#b-之后就可以转换为数组或JSON对象" class="headerlink" title="b. 之后就可以转换为数组或JSON对象"></a>b. 之后就可以转换为数组或JSON对象</h4><pre><code class="QT">QJsonObject QJSONDocument::object:( ) const;
+<h3 id="c-使用得到的字符串进行数据传输，或者保存到文件"><a href="#c-使用得到的字符串进行数据传输，或者保存到文件" class="headerlink" title="c. 使用得到的字符串进行数据传输，或者保存到文件"></a>c. 使用得到的字符串进行数据传输，或者保存到文件</h3><h2 id="2-字符串-gt-QJsonObject-QjsonArray"><a href="#2-字符串-gt-QJsonObject-QjsonArray" class="headerlink" title="(2).字符串 =&gt; QJsonObject / QjsonArray"></a>(2).字符串 =&gt; QJsonObject / QjsonArray</h2><h3 id="a-将-JSON字符串转换为-QJsonDoucument-对象"><a href="#a-将-JSON字符串转换为-QJsonDoucument-对象" class="headerlink" title="a. 将 JSON字符串转换为 QJsonDoucument 对象"></a>a. 将 JSON字符串转换为 QJsonDoucument 对象</h3><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">[static] QJsonDocument  QJsonDoucument::fromBinaryData( const QJsonArray &amp;data, Datavalidation validation &#x3D; validation);
+[static] QJsonDocument  QJsonDoucument::fromjson( const QJsonArray &amp;json,QJsonParseError * error &#x3D; Q_NULLPTR);</code></pre></div></figure>
 
-QJsonArray QJsonDocument::array( ) const;
-</code></pre>
+<h3 id="3-将QJsonDoucument对象-转换为json数组-对象"><a href="#3-将QJsonDoucument对象-转换为json数组-对象" class="headerlink" title="(3). 将QJsonDoucument对象 转换为json数组 /对象"></a>(3). 将QJsonDoucument对象 转换为json数组 /对象</h3><h4 id="a-判断文档对象中存储的数据，是JSON-数组还是JSON-对象"><a href="#a-判断文档对象中存储的数据，是JSON-数组还是JSON-对象" class="headerlink" title="a. 判断文档对象中存储的数据，是JSON 数组还是JSON 对象"></a>a. 判断文档对象中存储的数据，是JSON 数组还是JSON 对象</h4><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">bool QJsonDocument::isArray:() const;
+
+bool QJsonDocument::isObject() const;</code></pre></div></figure>
+
+<h4 id="b-之后就可以转换为数组或JSON对象"><a href="#b-之后就可以转换为数组或JSON对象" class="headerlink" title="b. 之后就可以转换为数组或JSON对象"></a>b. 之后就可以转换为数组或JSON对象</h4><figure><div class="code-wrapper"><pre class="language-QT" data-language="QT"><code class="language-QT">QJsonObject QJSONDocument::object:( ) const;
+
+QJsonArray QJsonDocument::array( ) const;</code></pre></div></figure>
+
 <h4 id="c-调用QJsonArray-QJsonObject-类提供api获取存储在其中的数据"><a href="#c-调用QJsonArray-QJsonObject-类提供api获取存储在其中的数据" class="headerlink" title="c. 调用QJsonArray / QJsonObject 类提供api获取存储在其中的数据"></a>c. 调用QJsonArray / QJsonObject 类提供api获取存储在其中的数据</h4>
                 
               </div>

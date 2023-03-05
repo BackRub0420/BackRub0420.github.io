@@ -316,7 +316,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2 天前
+                    本文最后更新于：3 天前
                   
                 
               </p>
@@ -327,7 +327,7 @@
                 <h1 id="1-DMA简介"><a href="#1-DMA简介" class="headerlink" title="1.DMA简介"></a>1.DMA简介</h1><p>直接存储器存取(DMA)用来提供在外设和存储器之间或者存储器和存储器之间的高速数据传 输。无须CPU干预，数据可以通过DMA快速地移动，这就节省了CPU的资源来做其他操作。 两个DMA控制器有12个通道(DMA1有7个通道，DMA2有5个通道)，每个通道专门用来管理来自 于一个或多个外设对存储器访问的请求。还有一个仲裁器来协调各个DMA请求的优先权。</p>
 <p>下面对DMA的寄存器做一个简介。</p>
 <ol>
-<li>首先配置两个寄存器  DMA1有7个通道  通过CPAR（外设）寄存器确定用哪个通道  然后选择片上外设的地址 ，再通过CMAR（储存器，也就是内存）寄存器确定内存上的地址，然后通过CNDTR这个寄存器确定你要传送数据的字节数  最大65535（只能配置低16位，其余保留）。如图：<br><img data-src="./STM32-DMA/dma_waishe.png"><br><img data-src="./STM32-DMA/dma_neicun.png"></li>
+<li>首先配置两个寄存器  DMA1有7个通道  通过CPAR（外设）寄存器确定用哪个通道  然后选择片上外设的地址 ，再通过CMAR（储存器，也就是内存）寄存器确定内存上的地址，然后通过CNDTR这个寄存器确定你要传送数据的字节数  最大65535（只能配置低16位，其余保留）。如图：<br><img src="./STM32-DMA/dma_waishe.png" srcset="/img/loading.gif" lazyload><br><img src="./STM32-DMA/dma_neicun.png" srcset="/img/loading.gif" lazyload></li>
 </ol>
 <p>这两个寄存器确定了传送数据的位置，包括内存（存储器）、外设（片上外设）的寄存器地址。</p>
 <ol start="2">
