@@ -126,6 +126,13 @@
   </url>
   
   <url>
+    <loc>http://backrub0420.top/tags/TIM/</loc>
+    <lastmod>2023-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://backrub0420.top/tags/Hexo/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -141,13 +148,6 @@
   
   <url>
     <loc>http://backrub0420.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2023-03-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://backrub0420.top/tags/TIM/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -170,14 +170,14 @@
   </url>
   
   <url>
-    <loc>http://backrub0420.top/categories/STM32-ADC/</loc>
+    <loc>http://backrub0420.top/categories/STM32%E5%AE%9A%E6%97%B6%E5%99%A8/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://backrub0420.top/categories/STM32%E5%AE%9A%E6%97%B6%E5%99%A8/</loc>
+    <loc>http://backrub0420.top/categories/STM32-ADC/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
