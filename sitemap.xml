@@ -119,14 +119,7 @@
 
   
   <url>
-    <loc>http://backrub0420.top/tags/Markdown/</loc>
-    <lastmod>2023-03-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://backrub0420.top/tags/TIM/</loc>
+    <loc>http://backrub0420.top/tags/stm32-STM32/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -154,13 +147,27 @@
   </url>
   
   <url>
-    <loc>http://backrub0420.top/tags/stm32-STM32/</loc>
+    <loc>http://backrub0420.top/tags/Markdown/</loc>
+    <lastmod>2023-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://backrub0420.top/tags/TIM/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
 
+  
+  <url>
+    <loc>http://backrub0420.top/categories/STM32-ADC/</loc>
+    <lastmod>2023-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
   <url>
     <loc>http://backrub0420.top/categories/%E8%AF%AD%E8%A8%80/</loc>
@@ -171,13 +178,6 @@
   
   <url>
     <loc>http://backrub0420.top/categories/STM32%E5%AE%9A%E6%97%B6%E5%99%A8/</loc>
-    <lastmod>2023-03-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://backrub0420.top/categories/STM32-ADC/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
