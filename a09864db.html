@@ -13,27 +13,28 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Nietzsche">
+  <meta name="author" content="光的风向标">
   <meta name="keywords" content="STM32,linux,qt">
   
-    <meta name="description" content="STM32,Linux,Nietzsche,上帝已死,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://backrub0420.top/about/index.html">
+    <meta name="description" content="1.DMA简介直接存储器存取(DMA)用来提供在外设和存储器之间或者存储器和存储器之间的高速数据传 输。无须CPU干预，数据可以通过DMA快速地移动，这就节省了CPU的资源来做其他操作。 两个DMA控制器有12个通道(DMA1有7个通道，DMA2有5个通道)，每个通道专门用来管理来自 于一个或多个外设对存储器访问的请求。还有一个仲裁器来协调各个DMA请求的优先权。 下面对DMA的寄存器做一个简介。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STM32_DMA">
+<meta property="og:url" content="http://backrub0420.top/a09864db.html">
 <meta property="og:site_name" content="Nietzsche">
-<meta property="og:description" content="STM32,Linux,Nietzsche,上帝已死,">
+<meta property="og:description" content="1.DMA简介直接存储器存取(DMA)用来提供在外设和存储器之间或者存储器和存储器之间的高速数据传 输。无须CPU干预，数据可以通过DMA快速地移动，这就节省了CPU的资源来做其他操作。 两个DMA控制器有12个通道(DMA1有7个通道，DMA2有5个通道)，每个通道专门用来管理来自 于一个或多个外设对存储器访问的请求。还有一个仲裁器来协调各个DMA请求的优先权。 下面对DMA的寄存器做一个简介。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-21T02:49:51.000Z">
-<meta property="article:modified_time" content="2023-03-06T08:47:16.865Z">
+<meta property="og:image" content="http://backrub0420.top/STM32-DMA/dma_waishe.png">
+<meta property="og:image" content="http://backrub0420.top/STM32-DMA/dma_neicun.png">
+<meta property="article:published_time" content="2023-02-20T04:24:26.000Z">
+<meta property="article:modified_time" content="2023-03-02T05:23:45.099Z">
 <meta property="article:author" content="Nietzsche">
-<meta property="article:tag" content="STM32">
-<meta property="article:tag" content="linux">
-<meta property="article:tag" content="qt">
+<meta property="article:tag" content="-stm32 -STM32">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://backrub0420.top/STM32-DMA/dma_waishe.png">
   
   
   
-  <title>关于 - Nietzsche</title>
+  <title>STM32_DMA - Nietzsche</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -94,7 +95,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -200,9 +201,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于"></span>
+            <span id="subtitle" data-typed-text="STM32_DMA"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-20 12:24" pubdate>
+          2023年2月20日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          9 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -218,75 +259,147 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="/img/avatar.png" srcset="/img/loading.gif" lazyload class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">Fluid</div>
-    <div class="about-intro">An elegant theme for Hexo</div>
-    <div class="about-icons">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-        
-        
-        
-        <a href=https://github.com class="
-           hint--bottom hint--rounded"
-           aria-label=GitHub
-           target="_blank"
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">STM32_DMA</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="1-DMA简介"><a href="#1-DMA简介" class="headerlink" title="1.DMA简介"></a>1.DMA简介</h1><p>直接存储器存取(DMA)用来提供在外设和存储器之间或者存储器和存储器之间的高速数据传 输。无须CPU干预，数据可以通过DMA快速地移动，这就节省了CPU的资源来做其他操作。 两个DMA控制器有12个通道(DMA1有7个通道，DMA2有5个通道)，每个通道专门用来管理来自 于一个或多个外设对存储器访问的请求。还有一个仲裁器来协调各个DMA请求的优先权。</p>
+<p>下面对DMA的寄存器做一个简介。</p>
+<ol>
+<li>首先配置两个寄存器  DMA1有7个通道  通过CPAR（外设）寄存器确定用哪个通道  然后选择片上外设的地址 ，再通过CMAR（储存器，也就是内存）寄存器确定内存上的地址，然后通过CNDTR这个寄存器确定你要传送数据的字节数  最大65535（只能配置低16位，其余保留）。如图：<br><img src="./STM32-DMA/dma_waishe.png" srcset="/img/loading.gif" lazyload><br><img src="./STM32-DMA/dma_neicun.png" srcset="/img/loading.gif" lazyload></li>
+</ol>
+<p>这两个寄存器确定了传送数据的位置，包括内存（存储器）、外设（片上外设）的寄存器地址。</p>
+<ol start="2">
+<li>接着是一个配置寄存器CCR 这个寄存器主要是配置你的传送模式（外设到储存器 还是储存器到储存器）传送数据时  内存或者外设读的地址是否自增  还有是否循环传送  数据传送方向  最后是中断标志位是否使能 以及通道是否使能</li>
+</ol>
+<ol start="7">
+<li>由于上面那个CNDTR寄存器必须在通道关闭情况下才能写入  所以我放到前面了  最后是中断标志寄存器和清除中断标志寄存器  对应上面那个CCR寄存器，里面中断使能以后  这个才有用 ，然后DMA1有7个通道  他这个是每个通道用4位 一共28位  也就是7组  每组4位  只有通道不同  其他都一样  其中四位里面最高位是传送错误标志位，使能如果发生错误这个能读到1，以此类推，从左往右第三位是传送一半标志位，第二位是传送完成标志位  最后一个是全局  也是说这个  只要有一个使能   这个就能读到1  对应的是清除  对应这个每一位   置1就清除对应的位。<br>还有一个就是位宽的问题  就是外设到内存 或者内存到外设  像AHB桥后面有的不支持字或半字写入  也就是一次必须配置32位。。不能直接配置其中的8位或者16位 这里面的一个逻辑是   比如内存到外设 内存到位宽是一个字节（8位）传输形式位“0xAB” 那么他到外设（假设外设配置位宽为一个字-32位）的配置就变为“0xABABABAB”以此类推如果传送一个半字（16位）“0xABCD”就编程“0xABCDABCD”这样 ，外设到内存同样也是这样。<br>上面的情况都是传送小位宽到大位宽  如果要是大位宽到小位宽呢？（32位传送到8位或者16位）  比如“0xABCDEFGH”这样 。那么他传送到16位位宽就是“0xEFGH” 传送到8位位宽就是“0xGH”  也就是说如果位宽不对奇  就从低位到高位开始保留  保留位数和传送目的地的位宽保持一致。</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
       
-        
-        
-        
-        <a href=https://douban.com class="
-           hint--bottom hint--rounded"
-           aria-label=豆瓣
-           target="_blank"
-        >
-          <i class="iconfont icon-douban-fill" aria-hidden="true"></i>
-          
-        </a>
+        <a href="/tags/stm32-STM32/">#-stm32 -STM32</a>
       
-        
-        
-        
-        <a  class="qr-trigger
-           "
-           
-           target="_self"
-        >
-          <i class="iconfont icon-wechat-fill" aria-hidden="true"></i>
-          
-            <img class="qr-img" src="/img/favicon.png" srcset="/img/loading.gif" lazyload alt="qrcode" />
-          
-        </a>
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>STM32_DMA</div>
+      <div>http://backrub0420.top/a09864db.html</div>
+    </div>
+    <div class="license-meta">
       
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>光的风向标</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年2月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/b6ef4fe0.html" title="Git命令">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Git命令</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
     </div>
   </div>
 </div>
 
-<article class="about-content page-content mt-5">
-  <div class="markdown-body">
-    
-  </div>
-
-  
-</article>
-
 
 
 
@@ -313,11 +426,8 @@
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     
 
     
@@ -410,6 +520,46 @@
   
 
 
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>

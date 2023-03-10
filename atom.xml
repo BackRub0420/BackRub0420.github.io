@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Nietzsche</title>
+  
+  <subtitle>上帝已死！</subtitle>
+  <link href="http://backrub0420.top/atom.xml" rel="self"/>
+  
+  <link href="http://backrub0420.top/"/>
+  <updated>2023-03-06T07:52:01.080Z</updated>
+  <id>http://backrub0420.top/</id>
+  
+  <author>
+    <name>Nietzsche</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STM32_ADC</title>
+    <link href="http://backrub0420.top/999f7c55.html"/>
+    <id>http://backrub0420.top/999f7c55.html</id>
+    <published>2023-02-28T06:17:46.000Z</published>
+    <updated>2023-03-06T07:52:01.080Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一-ADC库函数&quot;&gt;&lt;a href=&quot;#一-ADC库函数&quot; class=&quot;headerlink&quot; title=&quot;一. ADC库函数&quot;&gt;&lt;/a&gt;一. ADC库函数&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="STM32 ADC" scheme="http://backrub0420.top/categories/STM32-ADC/"/>
+    
+    
+    <category term="Hexo" scheme="http://backrub0420.top/tags/Hexo/"/>
+    
+    <category term="Github" scheme="http://backrub0420.top/tags/Github/"/>
+    
+    <category term="博客" scheme="http://backrub0420.top/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STM32_TIM</title>
+    <link href="http://backrub0420.top/d1644e84.html"/>
+    <id>http://backrub0420.top/d1644e84.html</id>
+    <published>2023-02-27T08:31:48.000Z</published>
+    <updated>2023-03-04T16:42:32.446Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;定时器简介&quot;&gt;&lt;a href=&quot;#定时器简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="STM32定时器" scheme="http://backrub0420.top/categories/STM32%E5%AE%9A%E6%97%B6%E5%99%A8/"/>
+    
+    
+    <category term="TIM" scheme="http://backrub0420.top/tags/TIM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown学习总结（超详细）</title>
+    <link href="http://backrub0420.top/b4dd708b.html"/>
+    <id>http://backrub0420.top/b4dd708b.html</id>
+    <published>2023-02-25T07:09:06.000Z</published>
+    <updated>2023-03-02T07:26:29.054Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一-Markdown标题&quot;&gt;&lt;a href=&quot;#一-Markdown标题&quot; class=&quot;headerlink&quot; title=&quot;一. Markdown标题&quot;&gt;&lt;/a&gt;一. Markdown标题&lt;/h1&gt;&lt;p&gt;使用 “#”</summary>
+        
+      
+    
+    
+    
+    <category term="语言" scheme="http://backrub0420.top/categories/%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="Markdown" scheme="http://backrub0420.top/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>”C语言_关键字32个“</title>
+    <link href="http://backrub0420.top/4dedf67.html"/>
+    <id>http://backrub0420.top/4dedf67.html</id>
+    <published>2023-02-24T18:26:51.000Z</published>
+    <updated>2023-03-03T06:07:40.049Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;        基本数据类型关键字</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ESP8266</title>
+    <link href="http://backrub0420.top/6d80d56e.html"/>
+    <id>http://backrub0420.top/6d80d56e.html</id>
+    <published>2023-02-24T18:25:15.000Z</published>
+    <updated>2023-02-24T18:28:06.686Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ESP8266-01S&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt; vcc供电3.3v&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt; gnd接地&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt; RX—外接TX&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt; TX—外接RX  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>”Qt中使用json类“</title>
+    <link href="http://backrub0420.top/1a39afc9.html"/>
+    <id>http://backrub0420.top/1a39afc9.html</id>
+    <published>2023-02-24T18:24:04.000Z</published>
+    <updated>2023-03-02T05:23:36.774Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;第一部分-QJsonObject&quot;&gt;&lt;a href=&quot;#第一部分-QJsonObject&quot; class=&quot;headerlink&quot; title=&quot;第一部分 QJsonObject&quot;&gt;&lt;/a&gt;第一部分</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Git命令</title>
+    <link href="http://backrub0420.top/b6ef4fe0.html"/>
+    <id>http://backrub0420.top/b6ef4fe0.html</id>
+    <published>2023-02-24T18:21:48.000Z</published>
+    <updated>2023-03-06T08:59:21.245Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;创建版本库命令&quot;&gt;&lt;a href=&quot;#创建版本库命令&quot; class=&quot;headerlink&quot; title=&quot;创建版本库命令&quot;&gt;&lt;/a&gt;创建版本库命令&lt;/h1&gt;&lt;p&gt;1.     &lt;code&gt;git init&lt;/code&gt;     </summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>STM32_DMA</title>
+    <link href="http://backrub0420.top/a09864db.html"/>
+    <id>http://backrub0420.top/a09864db.html</id>
+    <published>2023-02-20T04:24:26.000Z</published>
+    <updated>2023-03-02T05:23:45.099Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-DMA简介&quot;&gt;&lt;a href=&quot;#1-DMA简介&quot; class=&quot;headerlink&quot; title=&quot;1.DMA简介&quot;&gt;&lt;/a&gt;1.DMA简介&lt;/h1&gt;&lt;p&gt;直接存储器存取(DMA)用来提供在外设和存储器之间或者存储器和存储器之间的高速数据传</summary>
+        
+      
+    
+    
+    
+    
+    <category term="-stm32 -STM32" scheme="http://backrub0420.top/tags/stm32-STM32/"/>
+    
+  </entry>
+  
+</feed>
