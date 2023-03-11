@@ -4,60 +4,6 @@
   
   
   <entry>
-    <title>STM32_ADC</title>
-    <link href="/999f7c55.html"/>
-    <url>/999f7c55.html</url>
-    
-    <content type="html"><![CDATA[<h2 id="一-ADC库函数"><a href="#一-ADC库函数" class="headerlink" title="一. ADC库函数"></a>一. ADC库函数</h2><p><img src="STM32_ADC_fun.png"><br>具体如下:<br><img src="ADC_Init.png"><br><img src="adc_cmd.png"><br><img src="adc_software_cmd.png"><br>具体步骤:<br><img src="shiyanbuzhou.png"></p><p>ADC的工作模式如下:<br>ADC_MODE<br>库函数版:<br>ADC_Mode_Independent   为独立工作模式<br>ADC_Mode_RegInjecSimult  为</p><p>ADC寄存器总结.</p><h3 id="1-ADC-规则序列寄存器-3个"><a href="#1-ADC-规则序列寄存器-3个" class="headerlink" title="1. ADC 规则序列寄存器( 3个 )"></a>1. ADC 规则序列寄存器( 3个 )</h3><p>包括ADC_SQR1     ADC_SQR2    ADC_SQR3三个寄存器,<br>规则通道最多只能安排16个通道转换顺序,具体由下列寄存器决定,如下图:<br><img src="adc_sqr1.png"><br><img src="adc_sqr2.png"><br><img src="adc_sqr3.png"><br>由上图可知:<br>该寄存器的作用时确定通道的转换优先级,即确定通道的转换顺序.</p><p>其中每5个位表示一个转换顺序,顺序由 ADC_SQR3  —ADC_SQR1  依次递增</p><p>其中每一个转换顺序的值时填入一个通道序号.( 该序号指0 — 17   包括16个外部通道模拟输入以及内部温度模拟输入和Vref( 参考电压) 输入 通道)</p><h3 id="2-ADC-注入序列寄存器"><a href="#2-ADC-注入序列寄存器" class="headerlink" title="2. ADC 注入序列寄存器"></a>2. ADC 注入序列寄存器</h3><p><img src="adc_jsqr.png"><br>该寄存器与上面的规则寄存器类似,也是每5个bit位代表一个通道,注入通道一共有4个.</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>STM32 ADC</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Hexo</tag>
-      
-      <tag>Github</tag>
-      
-      <tag>博客</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>STM32_TIM</title>
-    <link href="/d1644e84.html"/>
-    <url>/d1644e84.html</url>
-    
-    <content type="html"><![CDATA[<h1 id="定时器简介"><a href="#定时器简介" class="headerlink" title="定时器简介"></a>定时器简介</h1><p>STM32F1系列的定时器有8个,其中高级定时器为TIM1和TIM8,<br>通用定时器为TIM2,TIM3,TIM4,TIM5, 基本定时器为TIM6和TIM7.<br><img src="./STM32-TIM/AHB_TIM.png"><br>由上图可知,高级定时器TIM1和TIM8挂载到APB2高速时钟上,频率为72MHZ,TIM2-TIM7包括基本定时器和通用定时器都挂载到APB1低俗时钟上,频率为36MHZ.<br>下图为定时器的时钟树:</p><p><img src="./STM32-TIM/dingshiqi_clock.png"></p><p>由图可知,定时器2-7需要的时钟为72MHZ,APB1提供36MHZ的时钟,所以定时器2-7必须配置预分频系数( PSC &gt; 1),才能产生72MHZ的时钟频率供TIM2-TIM7这些寄存器使用.STM32提供稳定的72MHZ的时钟频率,对于定时器1和定时器8,则预分频系数(PSC == 1)获得72MHZ的时钟频率.</p><h1 id="一-基本定时器"><a href="#一-基本定时器" class="headerlink" title="一.基本定时器"></a>一.基本定时器</h1><h3 id="1-基本定时器框图"><a href="#1-基本定时器框图" class="headerlink" title="1.基本定时器框图"></a>1.基本定时器框图</h3><p>STMF1系列只有两个基本定时器,即TIM6和TIM7,功能主要包括:</p><ul><li>16位自动重装载累加计数器, 即计数器配置范围位 0-65535</li><li> 16位可编程(可实时修改)预分频器，设置范围为0-65535,  分频为psc+1,即可以对时钟进行1～65536之间的任意数值分频.</li><li>可以触发DAC的同步电路</li><li>在 更新事件 (计数器溢出) 时产生一个更新事件U( updat )可以产生中断或者DMA请求<br><img src="./STM32-TIM/base.png"><br>基本定时器框图主要分为3个方面:<br>a. 时钟源<br>b. 控制器<br>c. 计数器( 也叫时基单元 )</li></ul><h3 id="2-基本定时器计数模式及溢出条件"><a href="#2-基本定时器计数模式及溢出条件" class="headerlink" title="2.基本定时器计数模式及溢出条件"></a>2.基本定时器计数模式及溢出条件</h3><p>溢出条件为  CNT == ARR( 影子寄存器的值)<br>其中,影子寄存器时实际起作用的寄存器,不可直接访问.<br>对于PSC和ARR这两个寄存器都具有影子寄存器.<br>可以通过计数器溢出产生更新事件和中断.其中:<br>更新事件还可以通过UG位产生软件更新事件<br> 自动重装载寄存器通过ARPE位决定是否有缓冲</p><h3 id="3-基本定时器相关寄存器"><a href="#3-基本定时器相关寄存器" class="headerlink" title="3.基本定时器相关寄存器"></a>3.基本定时器相关寄存器</h3><h3 id="4-定时器溢出时间计算方法"><a href="#4-定时器溢出时间计算方法" class="headerlink" title="4. 定时器溢出时间计算方法"></a>4. 定时器溢出时间计算方法</h3><h2 id="三-高级定时器"><a href="#三-高级定时器" class="headerlink" title="三. 高级定时器"></a>三. 高级定时器</h2><ol><li>包括三个寄存器部分 ,分别为:<br>a. 计数器寄存器 ( TIMX_CNT )<br>b. 预分频寄存器 ( TIMX_PSC )<br>c. 自动重装载寄存器 ( TIMX_ARR )<br>d. 重复计数寄存器 ( TIMX_RCR )<br>在定时器图中位于如下图:<br><img src="./STM32-TIM/shiji.png"><br>寄存器具体介绍如下:</li></ol><p><img src="./STM32-TIM/CNT.png"></p><p><img src="./STM32-TIM/PSC.png"><br>该寄存器<br>    <img src="./STM32-TIM/ARR.png"><br>    <img src="./STM32-TIM/RCR.png"></p><h1 id="3-输入捕获"><a href="#3-输入捕获" class="headerlink" title="3. 输入捕获"></a>3. 输入捕获</h1><h1 id="4-输出比较"><a href="#4-输出比较" class="headerlink" title="4. 输出比较"></a>4. 输出比较</h1>]]></content>
-    
-    
-    <categories>
-      
-      <category>STM32定时器</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>TIM</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Markdown学习总结（超详细）</title>
     <link href="/b4dd708b.html"/>
     <url>/b4dd708b.html</url>
@@ -83,32 +29,6 @@
   
   
   <entry>
-    <title>C语言_关键字32个</title>
-    <link href="/4dedf67.html"/>
-    <url>/4dedf67.html</url>
-    
-    <content type="html"><![CDATA[<p>        基本数据类型关键字 （9个）</p><p>        void：                声明函数无返回值或无参数，声明无类型指针，显示丢弃运算结果 </p><p>        char：                字符型类型数据，属于整型数据的一种 </p><p>        int：                整型数据，通常为编译器指定的机器字长 </p><p>        float：                单精度浮点型数据，属于浮点数据的一种 </p><p>        double：                双精度浮点型数据，属于浮点数据的一种 类型修饰关键字： </p><p>        short：                修饰int，短整型数据，int可以被省略</p><p>        long ：                修饰int，长整形数据，可省略被修饰的int </p><p>        signed ：         修饰整型数据，有符号数据类型 </p><p>        unsigned ：        修饰整型数据，无符号数据类型</p><p>        分支结构（5个）</p><p>        if：                条件语句，后面不需要放分号 </p><p>        else ：                条件语句否定分支（与if连用） </p><p>        switch：        开关语句（多重分支语句） </p><p>        case ：                开关语句中的分支标记 、</p><p>        default：        开关语句中的“其他”分支，可选。</p><p>        循环结构（3个）</p><p>        for：        for循环结构</p><p>        do：        do while循环结构</p><p>        while：        while循环结构</p><p>        跳转结构(4个)</p><p>        return：                用在函数体中，返回特定值（或者是void值，即不返回值）</p><p>        continue：        结束当前循环，开始下一轮循环</p><p>        break：                跳出当前循环或switch结构</p><p>        goto：                无条件跳转语句</p><p>        复杂类型关键字（5个）</p><p>        struct ：                结构体声明 </p><p>        union ：           共用体声明（联合体）</p><p>        enum ：                枚举类型声明 </p><p>        typedef ：        声明类型别名</p><p>        sizeof ：                得到特定类型或特定类型变量的大小 </p><p>        存储级别关键字（6个）</p><p>        auto：                指定为自动变量，由编译器自动分配及释放。通常在栈上分配 </p><p>        static：                指定为静态变量，分配在静态变量区，修饰函数时，指定函数作用域为文件内部 </p><p>        register：        指定为寄存器变量，建议编译器将变量存储到寄存器中使用，也可以修饰函数形参，建议编译器通过寄存器而不是堆栈传递参数。</p><p>        extern：                指定对应变量为外部变量，即标示变量或者函数的定义在别的文件中，提示编译器遇到此变量和函数时在其他模块中寻找其定义。</p><p>        const：                与volatile合称“cv特性”，指定变量不可被当前线程/进程改变（但有可能被系统或其他线程/进程改变）</p><p>        volatile：            与const合称“cv特性”，指定变量的值有可能会被系统或其他进程/线程改变，强制编译器每次从内存中取得该变量的值。</p><p> 标识符命名规则：</p><p>        1、只能由字母、数字、下划线或者美元符号($)组成 </p><p>        2、不能以数字开头</p><p>        3、不能与关键字重名</p><p>        4、严格区分大小写</p><p>数据的计量单位</p><p>        Bit        位</p><p>        1 Byte = 8Bits                字节</p><p>        1 KB   = 1024Btyes        千字节</p><p>        1 MB   = 1024KB                ……</p><p>        1 GB   = 1024MB</p><p>        1 TB   = 1024GB</p><p>一个数值有无符号就代表其是否有正负之分</p><p>signed                表示有符号</p><p>unsigned        表示无符号</p><p>符号位 -&gt;         就是一个数的最高位不代表本身的数值，而代表符号</p><p>                        0表示正数，1表示负数</p><p>char        字符型（也可以表示整型数据）8位</p><p>signed   char        [-128,127]</p><p>unsigned char        [0   ,255]                u8</p><p>short        短整型 16位</p><p>signed   short        [-32768,32767]</p><p>unsigned short        [0     ,65535]        u16</p><p>int                整型 32位</p><p>signed   int        [-2147483648,2147483647]</p><p>unsigned int        [0          ,4294967295]</p><p>……</p><p>原码：</p><p>        第一位表示符号, 其余位表示值</p><p>反码： </p><p>        正数的反码是其本身</p><p>        负数的反码是在其原码的基础上, 符号位不变，其余各个位取反。 </p><p>补码：</p><p>        正数的补码就是其本身 负数的补码是在其原码的基础上, 符号位不变, </p><p>        其余各位取反, 最后+1 (即在反码的基础上+1)</p><p>[数据在计算机中是以补码的形式去存储的]</p><p>变量的定义和初始化</p><p>定义：</p><p>        &lt;数据类型&gt; &lt;变量名&gt;;                                                //定义单个变量</p><p>        &lt;数据类型&gt; &lt;变量名&gt;,&lt;变量名&gt;,&lt;变量名&gt;;                //定义多个变量</p><p>初始化：（赋值）</p><p>        1、&lt;数据类型&gt; &lt;变量名&gt; = ?;        //定义的同时进行初始化</p><p>        2、&lt;数据类型&gt; &lt;变量名&gt;;                //先定义</p><p>           &lt;变量名&gt; = ?;                        //然后进行初始化</p><p>常量的定义和初始化</p><p>        对于变量使用const关键字进行修饰即可</p><p>        const &lt;数据类型&gt; …</p><p>单精度浮点变量的有效位数：7位</p><p>双精度浮点变量的有效位数：15位</p><p>二者对小数的有效位数只有6位</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>ESP8266</title>
-    <link href="/6d80d56e.html"/>
-    <url>/6d80d56e.html</url>
-    
-    <content type="html"><![CDATA[<p>ESP8266-01S</p><ol><li><p> vcc供电3.3v</p></li><li><p> gnd接地</p></li><li><p> RX—外接TX</p></li><li><p> TX—外接RX  </p></li><li><p> EN(CH_PD) 引脚 </p></li></ol><p>高电平工作</p><p>低电平模块供电关闭</p><p>接VCC</p><ol><li> RTS(GPIO16)引脚</li></ol><p>外部reset信号</p><p>低电平复位</p><p>高电平工作（默认为高电平）</p><p>接VCC 或者悬空</p><p>拉低为复位</p><ol><li> GPIO2 引脚</li></ol><p>开机上电必须为高电平</p><p>禁止硬件下拉</p><p>内部默认已拉高</p><p>接VCC  禁止接地</p><ol><li> GPIO0默认为</li></ol><p>wifi的 status指示信号（工作状态标志引脚）</p><p>GPIO0接地 为烧录模式</p><p>GPIO0接VCC 或者悬空 为工作模式</p><p>烧录模式</p><p>接线：</p><p>TX    </p><p>—RX</p><p>RX   </p><p>—TX</p><p>VCC</p><p>—3.3V</p><p>GND</p><p>— GND</p><p>EN</p><p>—VCC(使能)</p><p>RTS</p><p>— VCC(或者悬空)  接地为复位</p><p>GPIO0</p><p>—  GND 接地为烧录模式</p><p>GPIO2</p><p>— VCC(必须接高电平，禁止硬件下拉，即接GND)</p><p>工作模式</p><p>接线：</p><p>TX    </p><p>—RX</p><p>RX   </p><p>—TX</p><p>VCC</p><p>—3.3V</p><p>GND</p><p>— GND</p><p>EN</p><p>—VCC(使能)</p><p>RTS</p><p>— VCC(或者悬空)  接地为复位</p><p>GPIO0</p><p>—  VCC(或者悬空)</p><p>GPIO2</p><p>— VCC(必须接高电平，禁止硬件下拉，即接GND)</p><p>使用AT指令连接ONENET平台</p><ol><li> AT</li></ol><p>测试模块是否连接成功</p><ol><li> AT+CWMODE=1</li></ol><p>设置工作模式  1为station模式</p><ol><li> AT+CWJAP=”HUAWEI_Giga”,”12345678”</li></ol><p>连接WIFI</p><ol><li> AT+CIPSTART=”TCP”,”183.230.40.33”,80</li></ol><p>连接ONENET云平台</p><ol><li> AT+CIPMODE=1</li></ol><p>设置透传模式</p><ol><li> AT+CIPSEND</li></ol><p>上传信息</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Qt中使用json类</title>
     <link href="/1a39afc9.html"/>
     <url>/1a39afc9.html</url>
@@ -126,28 +46,9 @@
     <link href="/b6ef4fe0.html"/>
     <url>/b6ef4fe0.html</url>
     
-    <content type="html"><![CDATA[<h1 id="创建版本库命令"><a href="#创建版本库命令" class="headerlink" title="创建版本库命令"></a>创建版本库命令</h1><p>1.     <code>git init</code>      //设置仓库存放位置</p><p>2.     <code>git add</code>      // 将文件提交到暂存区</p><p>3.     <code>git commit</code>     //将文集提交到仓库</p><p>注意： 该命令添加 -m选项 可以输入本次提交的说明</p><p>例子：<code>git commit -m &quot;wrote a readme file&quot;</code></p><p>建议添加-m选项   指出本次提交 修改的说明  便于读取</p><p>4.     <code>git log</code>   //查看提交到仓库的记录</p><p>说明 ：上一个版本就是HEAD^，上上一个版本就是HEAD^^</p><p>100个版本写100个^比较容易数不过来，所以写成HEAD~100</p><p>5.     <code>git  reflog</code>  //查看每一次操作的命令</p><p>6.     <code>git  reset</code>    //回退到指定版本</p><p>7.     <code>git status</code>   //查看提交文件的状态</p><p>8.     <code>git checkout</code>  //撤销修改</p><p> 注意：该命令是用版本库里的版本替换工作区的版本</p><p>所以 ，显而易见   如果从来没有将该文件添加到版本库中，使用该命令是无法恢复的！</p><p>9.      <code>git  rm</code> //删除文件</p><p>注意：  <code>git commit -m</code>  使用删除命令后再使用该命令进行备注说明</p><h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><h2 id="远程仓库绑定步骤"><a href="#远程仓库绑定步骤" class="headerlink" title="远程仓库绑定步骤"></a>远程仓库绑定步骤</h2><p>安装git之后使用该命令为git添加用户名和邮件</p><p>10.   <code>$ git config --global user.name &quot;Your Name&quot;</code></p><p>11.   <code>$ git config --global user.email &quot;email@example.com&quot;</code></p><p>注意： <code>git config</code>命令的   –global参数，用了这个参数，</p><p>表示你这台机器上所有的Git仓库都会使用这个配置，</p><p>当然也可以对某个仓库指定不同的用户名和Email地址</p><p>12.    <code>git remote add origin      +    仓库地址  //添加远程仓库</code></p><p>说明：  origin为远程仓库名</p><p>13 .   <code>ssh-keygen -t rsa -C &quot;youremail@example&quot;.com&quot;</code>   //生成ssh认证秘钥</p><p>说明：读入该文件下  id_rsa.pub  的秘钥  到远程仓库进行绑定</p><p><code>/c/Users/zhang/AppData/Roaming/SPB_16.6/.ssh/id_rsa.pub</code></p><p>远程仓库绑定秘钥后   使用 ssh -T <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;</a> 验证是否成功</p><h2 id="仓库提交下载命令操作"><a href="#仓库提交下载命令操作" class="headerlink" title="仓库提交下载命令操作"></a>仓库提交下载命令操作</h2><p>14.    <code>git  push   -u  origin  master</code> //将本地仓库内容推向远程仓库</p><p>注意：添加 -u参数  Git不但会把本地的master分支内容推送的远程新的master分支，</p><p>还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。</p><p>15 .   <code>git clone     +     仓库地址</code>   //从远程仓库克隆（下载）</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="创建版本库命令"><a href="#创建版本库命令" class="headerlink" title="创建版本库命令"></a>创建版本库命令</h1><p>1.     <code>git init</code>      //设置仓库存放位置</p><p>2.     <code>git add</code>      // 将文件提交到暂存区</p><p>3.     <code>git commit</code>     //将文集提交到仓库</p><p>注意： 该命令添加 -m选项 可以输入本次提交的说明</p><p>例子：<code>git commit -m &quot;wrote a readme file&quot;</code></p><p>建议添加-m选项   指出本次提交 修改的说明  便于读取</p><p>4.     <code>git log</code>   //查看提交到仓库的记录</p><p>说明 ：上一个版本就是HEAD^，上上一个版本就是HEAD^^</p><p>100个版本写100个^比较容易数不过来，所以写成HEAD~100</p><p>5.     <code>git  reflog</code>  //查看每一次操作的命令</p><p>6.     <code>git  reset</code>    //回退到指定版本</p><p>7.     <code>git status</code>   //查看提交文件的状态</p><p>8.     <code>git checkout</code>  //撤销修改</p><p> 注意：该命令是用版本库里的版本替换工作区的版本</p><p>所以 ，显而易见   如果从来没有将该文件添加到版本库中，使用该命令是无法恢复的！</p><p>9.      <code>git  rm</code> //删除文件</p><p>注意：  <code>git commit -m</code>  使用删除命令后再使用该命令进行备注说明</p><h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><h2 id="远程仓库绑定步骤"><a href="#远程仓库绑定步骤" class="headerlink" title="远程仓库绑定步骤"></a>远程仓库绑定步骤</h2><p>安装git之后使用该命令为git添加用户名和邮件</p><p>10.   <code>$ git config --global user.name &quot;Your Name&quot;</code></p><p>11.   <code>$ git config --global user.email &quot;email@example.com&quot;</code></p><p>注意： <code>git config</code>命令的   –global参数，用了这个参数，</p><p>表示你这台机器上所有的Git仓库都会使用这个配置，</p><p>当然也可以对某个仓库指定不同的用户名和Email地址</p><p>12.    <code>git remote add origin      +    仓库地址  //添加远程仓库</code></p><p>说明：  origin为远程仓库名</p><p>13 .   <code>ssh-keygen -t rsa -C &quot;youremail@example&quot;.com&quot;</code>   //生成ssh认证秘钥</p><p>说明：读入该文件下  id_rsa.pub  的秘钥  到远程仓库进行绑定</p><p><code>/c/Users/zhang/AppData/Roaming/SPB_16.6/.ssh/id_rsa.pub</code></p><p>远程仓库绑定秘钥后   使用 ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;">&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;</a> 验证是否成功</p><h2 id="仓库提交下载命令操作"><a href="#仓库提交下载命令操作" class="headerlink" title="仓库提交下载命令操作"></a>仓库提交下载命令操作</h2><p>14.    <code>git  push   -u  origin  master</code> //将本地仓库内容推向远程仓库</p><p>注意：添加 -u参数  Git不但会把本地的master分支内容推送的远程新的master分支，</p><p>还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。</p><p>15 .   <code>git clone     +     仓库地址</code>   //从远程仓库克隆（下载）</p>]]></content>
     
     
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>STM32_DMA</title>
-    <link href="/a09864db.html"/>
-    <url>/a09864db.html</url>
-    
-    <content type="html"><![CDATA[<h1 id="1-DMA简介"><a href="#1-DMA简介" class="headerlink" title="1.DMA简介"></a>1.DMA简介</h1><p>直接存储器存取(DMA)用来提供在外设和存储器之间或者存储器和存储器之间的高速数据传 输。无须CPU干预，数据可以通过DMA快速地移动，这就节省了CPU的资源来做其他操作。 两个DMA控制器有12个通道(DMA1有7个通道，DMA2有5个通道)，每个通道专门用来管理来自 于一个或多个外设对存储器访问的请求。还有一个仲裁器来协调各个DMA请求的优先权。</p><p>下面对DMA的寄存器做一个简介。</p><ol><li>首先配置两个寄存器  DMA1有7个通道  通过CPAR（外设）寄存器确定用哪个通道  然后选择片上外设的地址 ，再通过CMAR（储存器，也就是内存）寄存器确定内存上的地址，然后通过CNDTR这个寄存器确定你要传送数据的字节数  最大65535（只能配置低16位，其余保留）。如图：<br><img src="./STM32-DMA/dma_waishe.png"><br><img src="./STM32-DMA/dma_neicun.png"></li></ol><p>这两个寄存器确定了传送数据的位置，包括内存（存储器）、外设（片上外设）的寄存器地址。</p><ol start="2"><li>接着是一个配置寄存器CCR 这个寄存器主要是配置你的传送模式（外设到储存器 还是储存器到储存器）传送数据时  内存或者外设读的地址是否自增  还有是否循环传送  数据传送方向  最后是中断标志位是否使能 以及通道是否使能</li></ol><ol start="7"><li>由于上面那个CNDTR寄存器必须在通道关闭情况下才能写入  所以我放到前面了  最后是中断标志寄存器和清除中断标志寄存器  对应上面那个CCR寄存器，里面中断使能以后  这个才有用 ，然后DMA1有7个通道  他这个是每个通道用4位 一共28位  也就是7组  每组4位  只有通道不同  其他都一样  其中四位里面最高位是传送错误标志位，使能如果发生错误这个能读到1，以此类推，从左往右第三位是传送一半标志位，第二位是传送完成标志位  最后一个是全局  也是说这个  只要有一个使能   这个就能读到1  对应的是清除  对应这个每一位   置1就清除对应的位。<br>还有一个就是位宽的问题  就是外设到内存 或者内存到外设  像AHB桥后面有的不支持字或半字写入  也就是一次必须配置32位。。不能直接配置其中的8位或者16位 这里面的一个逻辑是   比如内存到外设 内存到位宽是一个字节（8位）传输形式位“0xAB” 那么他到外设（假设外设配置位宽为一个字-32位）的配置就变为“0xABABABAB”以此类推如果传送一个半字（16位）“0xABCD”就编程“0xABCDABCD”这样 ，外设到内存同样也是这样。<br>上面的情况都是传送小位宽到大位宽  如果要是大位宽到小位宽呢？（32位传送到8位或者16位）  比如“0xABCDEFGH”这样 。那么他传送到16位位宽就是“0xEFGH” 传送到8位位宽就是“0xGH”  也就是说如果位宽不对奇  就从低位到高位开始保留  保留位数和传送目的地的位宽保持一致。</li></ol>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>-stm32 -STM32</tag>
-      
-    </tags>
     
   </entry>
   

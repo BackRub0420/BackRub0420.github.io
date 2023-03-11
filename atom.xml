@@ -6,7 +6,7 @@
   <link href="http://backrub0420.top/atom.xml" rel="self"/>
   
   <link href="http://backrub0420.top/"/>
-  <updated>2023-03-10T19:50:14.159Z</updated>
+  <updated>2023-03-10T19:49:55.369Z</updated>
   <id>http://backrub0420.top/</id>
   
   <author>
@@ -15,60 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>STM32_ADC</title>
-    <link href="http://backrub0420.top/999f7c55.html"/>
-    <id>http://backrub0420.top/999f7c55.html</id>
-    <published>2023-02-28T06:17:46.000Z</published>
-    <updated>2023-03-10T19:50:14.159Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;一-ADC库函数&quot;&gt;&lt;a href=&quot;#一-ADC库函数&quot; class=&quot;headerlink&quot; title=&quot;一. ADC库函数&quot;&gt;&lt;/a&gt;一. ADC库函数&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="STM32 ADC" scheme="http://backrub0420.top/categories/STM32-ADC/"/>
-    
-    
-    <category term="Hexo" scheme="http://backrub0420.top/tags/Hexo/"/>
-    
-    <category term="Github" scheme="http://backrub0420.top/tags/Github/"/>
-    
-    <category term="博客" scheme="http://backrub0420.top/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32_TIM</title>
-    <link href="http://backrub0420.top/d1644e84.html"/>
-    <id>http://backrub0420.top/d1644e84.html</id>
-    <published>2023-02-27T08:31:48.000Z</published>
-    <updated>2023-03-10T19:50:25.298Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;定时器简介&quot;&gt;&lt;a href=&quot;#定时器简介&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="STM32定时器" scheme="http://backrub0420.top/categories/STM32%E5%AE%9A%E6%97%B6%E5%99%A8/"/>
-    
-    
-    <category term="TIM" scheme="http://backrub0420.top/tags/TIM/"/>
-    
-  </entry>
   
   <entry>
     <title>Markdown学习总结（超详细）</title>
@@ -92,58 +38,6 @@
     
     
     <category term="Markdown" scheme="http://backrub0420.top/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言_关键字32个</title>
-    <link href="http://backrub0420.top/4dedf67.html"/>
-    <id>http://backrub0420.top/4dedf67.html</id>
-    <published>2023-02-24T18:26:51.000Z</published>
-    <updated>2023-03-10T20:05:47.203Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;        基本数据类型关键字</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ESP8266</title>
-    <link href="http://backrub0420.top/6d80d56e.html"/>
-    <id>http://backrub0420.top/6d80d56e.html</id>
-    <published>2023-02-24T18:25:15.000Z</published>
-    <updated>2023-02-24T18:28:06.686Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;ESP8266-01S&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt; vcc供电3.3v&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt; gnd接地&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt; RX—外接TX&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt; TX—外接RX  &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
@@ -186,29 +80,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>STM32_DMA</title>
-    <link href="http://backrub0420.top/a09864db.html"/>
-    <id>http://backrub0420.top/a09864db.html</id>
-    <published>2023-02-20T04:24:26.000Z</published>
-    <updated>2023-03-10T19:50:19.704Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1-DMA简介&quot;&gt;&lt;a href=&quot;#1-DMA简介&quot; class=&quot;headerlink&quot; title=&quot;1.DMA简介&quot;&gt;&lt;/a&gt;1.DMA简介&lt;/h1&gt;&lt;p&gt;直接存储器存取(DMA)用来提供在外设和存储器之间或者存储器和存储器之间的高速数据传</summary>
-        
-      
-    
-    
-    
-    
-    <category term="-stm32 -STM32" scheme="http://backrub0420.top/tags/stm32-STM32/"/>
     
   </entry>
   
