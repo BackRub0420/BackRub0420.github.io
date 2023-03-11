@@ -291,7 +291,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：4 小时前
+                    本文最后更新于：7 小时前
                   
                 
               </p>
@@ -327,7 +327,7 @@
 <p>13 .   <code>ssh-keygen -t rsa -C &quot;youremail@example&quot;.com&quot;</code>   //生成ssh认证秘钥</p>
 <p>说明：读入该文件下  id_rsa.pub  的秘钥  到远程仓库进行绑定</p>
 <p><code>/c/Users/zhang/AppData/Roaming/SPB_16.6/.ssh/id_rsa.pub</code></p>
-<p>远程仓库绑定秘钥后   使用 ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;</a> 验证是否成功</p>
+<p>远程仓库绑定秘钥后   使用 ssh -T <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#109;</a> 验证是否成功</p>
 <h2 id="仓库提交下载命令操作"><a href="#仓库提交下载命令操作" class="headerlink" title="仓库提交下载命令操作"></a>仓库提交下载命令操作</h2><p>14.    <code>git  push   -u  origin  master</code> //将本地仓库内容推向远程仓库</p>
 <p>注意：添加 -u参数  Git不但会把本地的master分支内容推送的远程新的master分支，</p>
 <p>还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
@@ -533,13 +533,63 @@
 
   <footer>
     <div class="footer-inner">
+
+<!--心形-->
   
     <div class="footer-content">
        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
-  
-    <div class="statistics">
+
+
+
+<div class="text-center py-1">   
+
+
+<div>
+  <span id="timeDate">载入天数...</span>
+  <span id="times">载入时分秒...</span>
+  <script>
+  var now = new Date();
+  function createtime(){
+      var grt= new Date("20/04/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "🚀 for&nbsp"+dnum+"&nbspdays";  //此次自定义显示内容
+      document.getElementById("times").innerHTML = hnum + "&nbsphr&nbsp" + mnum + "&nbspmin&nbsp" + snum + "&nbspsec";
+  }  //此次自定义显示内容
+  setInterval("createtime()",250);
+  </script>
+</div>
+
+<div>
+  <span>Copyright © 2020 - 2023</span></a>
+  <a href="https://backrub0420.top/" target="_blank" rel="nofollow noopener">
+   <span>  Nietzsche</span></a>    <br>
+</div>
+
+
+
+
+<!--公安信息-->
+
+  <div class="statistics">
   
   
 
@@ -562,10 +612,10 @@
   
 </div>
 
-  
-  
-    <!-- 备案信息 ICP for China -->
-    <div class="beian">
+
+
+  <!-- 备案信息 ICP for China -->
+  <div class="beian">
   <span>
     <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
       京ICP证123456号
@@ -591,9 +641,11 @@
   
 </div>
 
-  
-  
+
+
 </div>
+
+
 
   </footer>
 
