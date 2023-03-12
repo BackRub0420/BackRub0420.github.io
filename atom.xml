@@ -6,7 +6,7 @@
   <link href="http://backrub0420.top/atom.xml" rel="self"/>
   
   <link href="http://backrub0420.top/"/>
-  <updated>2023-03-12T11:45:42.274Z</updated>
+  <updated>2023-03-12T11:54:25.471Z</updated>
   <id>http://backrub0420.top/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Git命令总结</title>
+    <link href="http://backrub0420.top/b6ef4fe0.html"/>
+    <id>http://backrub0420.top/b6ef4fe0.html</id>
+    <published>2022-02-19T18:21:48.000Z</published>
+    <updated>2023-03-12T11:54:25.471Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;创建版本库命令&quot;&gt;&lt;a href=&quot;#创建版本库命令&quot; class=&quot;headerlink&quot; title=&quot;创建版本库命令&quot;&gt;&lt;/a&gt;创建版本库命令&lt;/h1&gt;&lt;p&gt;1.     &lt;code&gt;git init&lt;/code&gt;     </summary>
+        
+      
+    
+    
+    
+    <category term="bash命令" scheme="http://backrub0420.top/categories/bash%E5%91%BD%E4%BB%A4/"/>
+    
+    
+    <category term="Git" scheme="http://backrub0420.top/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Markdown学习总结（超详细）</title>
     <link href="http://backrub0420.top/b4dd708b.html"/>
     <id>http://backrub0420.top/b4dd708b.html</id>
     <published>2020-04-20T07:09:06.000Z</published>
-    <updated>2023-03-12T11:45:42.274Z</updated>
+    <updated>2023-03-12T11:50:49.860Z</updated>
     
     
       
@@ -34,7 +59,7 @@
     
     
     
-    <category term="语言" scheme="http://backrub0420.top/categories/%E8%AF%AD%E8%A8%80/"/>
+    <category term="标记性语言" scheme="http://backrub0420.top/categories/%E6%A0%87%E8%AE%B0%E6%80%A7%E8%AF%AD%E8%A8%80/"/>
     
     
     <category term="Markdown" scheme="http://backrub0420.top/tags/Markdown/"/>
